@@ -30,3 +30,5 @@ if [ -z $viewer ]; then
 fi
 time main
 time show $viewer
+read -p "Close all windows?" -n 1 -r
+[[ $REPLY =~ ^[Yy]$ ]] && pkill -9 pfsv

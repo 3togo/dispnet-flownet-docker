@@ -31,6 +31,7 @@ show() {
 run() {
     time main
     time show $converter
+    echo "pkill -9 eog"
 }
 
 if [ -z $eog ]; then
@@ -45,3 +46,5 @@ if [ -z $converter ]; then
     exit 1
 fi
 run
+read -p "Close all windows?" -n 1 -r
+[[ $REPLY =~ ^[Yy]$ ]] && pkill -9 eog
